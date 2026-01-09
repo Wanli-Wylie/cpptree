@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=64.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -7,7 +7,6 @@ name = "cpptree"
 version = "0.1.0"
 description = "A robust C Preprocessor AST parser and evaluator based on tree-sitter. detailed analysis and partial evaluation of preprocessor directives for C, C++, and Fortran."
 readme = "README.md"
-requires-python = ">=3.11"
 license = {text = "MIT"}
 authors = [
     {name = "Wanli Zhang", email = "s-zwl24@bjzgca.edu.cn"}
@@ -24,7 +23,6 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 
-# 核心依赖
 dependencies = [
     "tree-sitter",
     "tree-sitter-c",
