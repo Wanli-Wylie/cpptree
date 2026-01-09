@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cpptree"
+version = "0.1.0"
+description = "A robust C Preprocessor AST parser and evaluator based on tree-sitter. detailed analysis and partial evaluation of preprocessor directives for C, C++, and Fortran."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Wanli Zhang", email = "s-zwl24@bjzgca.edu.cn"}
+]
+keywords = ["c-preprocessor", "tree-sitter", "ast", "legacy-code"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Software Development :: Preprocessors",
+    "Topic :: Software Development :: Code Generators",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+# 核心依赖
+dependencies = [
+    "tree-sitter",
+    "tree-sitter-c",
+    "tree-sitter-cpp",
+    "tree-sitter-fortran",
+    "pydantic"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "black>=24.0.0",
+]
+
+[project.urls]
+"Repository" = "https://github.com/Wanli-Wylie/cpptree"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cpptree*"]
+namespaces = false
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
